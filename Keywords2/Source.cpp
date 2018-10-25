@@ -171,6 +171,7 @@ int main()
 					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
 					cout << "\n\nSorry, " << fName << " but " << guess << " isn't in the word.\n";
 					++wrong;
+					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); //green text
 				}
 			}
 
@@ -178,8 +179,7 @@ int main()
 			if (wrong == MAX_WRONG)
 			{
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4); //sets text color to red
-				cout << "\nERROR SIMULATION FAILED!\n\n";
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); //resets color to green
+				cout << "\nERROR SIMULATION FAILED!\n\n"; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); //green text
 				p = 4;
 				++MAX_WRONG;
 			}
