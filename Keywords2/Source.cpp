@@ -68,9 +68,9 @@ int main()
 	do
 	{
 		//sets up just one wrong guess if max-wrong is 0 when program restarts
-		if (MAX_WRONG == 0)
+		if (MAX_WRONG <= 7)
 		{
-			MAX_WRONG = 1;
+			MAX_WRONG = 7;
 		}
 
 		++simTries; //adds one for each time the simulation has been run
@@ -132,7 +132,7 @@ int main()
 				while ((used.find(guess) != string::npos) && (guess != '~'))
 				{
 					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4); //red text
-					cout << "\n\nYou've already guessed " << guess << fName << endl;
+					cout << "\n\nYou've already guessed " << guess << " " << fName << endl;
 					SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); //green text
 					cout << "Enter your guess: "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3); //blue text
 					cin >> guess; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2); //green text
